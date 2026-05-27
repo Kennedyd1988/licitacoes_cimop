@@ -1,0 +1,18 @@
+PÁGINAS GERADAS
+
+1. licitacoes.html
+2. dispensas-inexigibilidades.html
+
+Arquivos de dados:
+- dados/licitacoes.json
+- dados/dispensas-inexigibilidades.json
+
+Registros agrupados:
+- Licitações: 13
+- Dispensas/Inexigibilidades: 39
+
+As páginas possuem:
+- busca;
+- exportação CSV, XLSX, JSON, XML e PDF;
+- links externos para documentos do TCE/RN/SIAI quando existentes;
+- declarações negativas para anos sem registros.
