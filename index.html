@@ -1,93 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Licitações, Dispensas e Inexigibilidades | CIMOP</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Licitações | CIMOP</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+
 </head>
+
 <body>
-  <header class="topo">
+
+<header class="topo">
+
     <div class="container topo-conteudo">
-      <img src="https://www.cimop.com.br/admin/globalarq/logo/c357c8523be1cdca50a3186091e32265_reta.png" alt="Logo CIMOP" class="logo" />
-      <span class="etiqueta">Portal da Transparência</span>
-      <h1>Licitações, Dispensas e Inexigibilidades</h1>
-      <p>Consulta pública estruturada com tentativa de alimentação automática pela API de Dados Abertos do TCE/RN, filtrada para o CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO DOS MUNICÍPIOS DO OESTE POTIGUAR.</p>
-      <p class="data-atualizacao">Última atualização da página: <span id="dataHoje"></span></p>
-    </div>
-  </header>
 
-  <section class="painel-info">
+        <img
+            src="https://www.cimop.com.br/admin/globalarq/logo/c357c8523be1cdca50a3186091e32265_reta.png"
+            alt="Logo CIMOP"
+            class="logo"
+        >
+
+        <span class="etiqueta">
+            Portal da Transparência
+        </span>
+
+        <h1>Licitações</h1>
+
+        <p>
+            Transparência das licitações do CIMOP,
+            contendo número, modalidade, objeto, data da sessão,
+            valores estimados/homologados e situação dos procedimentos.
+        </p>
+
+        <p class="data-atualizacao">
+            Última atualização:
+            <span id="dataHoje"></span>
+        </p>
+
+    </div>
+
+</header>
+
+<section class="painel-info">
+
     <div class="container cards-info">
-      <div class="info-card"><span>Órgão consultado</span><p>CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO DOS MUNICÍPIOS DO OESTE POTIGUAR</p></div>
-      <div class="info-card"><span>Fonte principal</span><p>API de Dados Abertos do TCE/RN</p></div>
-      <div class="info-card"><span>Situação da API</span><p id="statusApi">Aguardando consulta...</p></div>
-    </div>
-  </section>
 
-  <main>
-    <div class="container">
-      <div class="secao-titulo">
+        <div class="info-card">
+            <span>Endereço</span>
+
+            <p>
+                Praça Vicente do Rêgo Filho, nº 76,
+                Centro – Portalegre/RN
+            </p>
+        </div>
+
+        <div class="info-card">
+            <span>Atendimento</span>
+
+            <p>
+                De segunda a sexta-feira,
+                das 7h00 às 13h00
+            </p>
+        </div>
+
+        <div class="info-card">
+            <span>E-mail</span>
+
+            <a href="mailto:cimop.rn@gmail.com">
+                cimop.rn@gmail.com
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<main>
+
+<div class="container">
+
+    <div class="secao-titulo">
+
         <div>
-          <h2>Consulta pública</h2>
-          <p>Pesquise por ano, modalidade, número, objeto, data, valor, situação, processo ou documento.</p>
+
+            <h2>Consulta pública</h2>
+
+            <p>
+                Pesquise, consulte e exporte as informações
+                em formato aberto e editável.
+            </p>
+
         </div>
+
         <div class="acoes-consulta">
-          <div class="busca"><input type="search" id="campoBusca" placeholder="Pesquisar registro..." onkeyup="filtrarTabelas()" /></div>
-          <div class="botoes-exportacao">
-            <button onclick="recarregarDados()">Atualizar API</button>
-            <button onclick="exportarCSV()">CSV</button>
-            <button onclick="exportarXLSX()">XLSX</button>
-            <button onclick="exportarJSON()">JSON</button>
-            <button onclick="exportarXML()">XML</button>
-            <button onclick="exportarPDF()">PDF</button>
-          </div>
+
+            <div class="busca">
+
+                <input
+                    type="search"
+                    id="campoBusca"
+                    placeholder="Pesquisar registro..."
+                    onkeyup="filtrarTabelas()"
+                >
+
+            </div>
+
+            <div class="botoes-exportacao">
+
+                <button onclick="recarregarDados()">Atualizar</button>
+                <button onclick="exportarCSV()">CSV</button>
+                <button onclick="exportarXLSX()">XLSX</button>
+                <button onclick="exportarJSON()">JSON</button>
+                <button onclick="exportarXML()">XML</button>
+                <button onclick="exportarPDF()">PDF</button>
+
+            </div>
+
         </div>
-      </div>
 
-      <div class="filtros-ano" id="filtrosAno"></div>
-
-      <div class="observacao" id="avisoApi"><strong>Observação técnica:</strong> esta página foi configurada para tentar consumir a API do TCE/RN automaticamente. Caso o navegador bloqueie a consulta por CORS ou caso o endpoint do Swagger use nomes de parâmetros diferentes, será necessário ajustar as constantes no início do arquivo <code>script.js</code>.</div>
-
-      <section class="bloco">
-        <h3>8.1 Relação das licitações em ordem sequencial</h3>
-        <p>Listagem das licitações em andamento e encerradas no exercício, incluindo, quando aplicável, dispensas e inexigibilidades, com número, modalidade, objeto, data da sessão de abertura, valor estimado ou homologado e situação do certame.</p>
-        <p class="nota-vigencia">Caso não tenham sido realizadas licitações em determinado exercício, deverá constar registro expresso de ausência de certames.</p>
-        <div class="tabela-box">
-          <table>
-            <thead>
-              <tr>
-                <th>Ano</th><th>Ordem</th><th>Nº / Modalidade</th><th>Objeto</th><th>Data da Sessão</th><th>Valor Estimado</th><th>Valor Homologado</th><th>Situação</th><th>Fonte / Detalhes</th>
-              </tr>
-            </thead>
-            <tbody id="tabelaLicitacoes"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="bloco">
-        <h3>8.4 Documentos dos processos de dispensa e inexigibilidade</h3>
-        <p>Relação dos processos de contratação direta com disponibilização dos principais documentos exigidos, mediante arquivo próprio ou link externo em formato pesquisável, quando disponível.</p>
-        <p class="nota-vigencia">As dispensas de pequeno valor poderão ser identificadas como hipótese dispensada da exigência documental ampla, conforme o caso.</p>
-        <div class="tabela-box">
-          <table>
-            <thead>
-              <tr>
-                <th>Ano</th><th>Processo</th><th>Modalidade</th><th>Objeto</th><th>Fornecedor</th><th>Valor</th><th>TR / Projeto Básico</th><th>Justificativa</th><th>Parecer</th><th>Homologação / Ratificação</th><th>Situação</th>
-              </tr>
-            </thead>
-            <tbody id="tabelaDocumentos"></tbody>
-          </table>
-        </div>
-        <div class="observacao"><strong>Observação:</strong> os links podem apontar para arquivos hospedados no portal institucional, PNCP, sistema próprio ou outro repositório oficial, desde que permitam consulta pública e leitura/pesquisa do conteúdo.</div>
-      </section>
     </div>
-  </main>
 
-  <footer class="rodape"><p>© CIMOP – Consórcio Intermunicipal Multifinalitário dos Municípios do Oeste Potiguar</p></footer>
-  <script src="script.js"></script>
+    <div class="filtros-ano" id="filtrosAno"></div>
+
+    <div class="bloco">
+
+        <h3>
+            8.1 Relação das licitações em ordem sequencial
+        </h3>
+
+        <p>
+            Listagem das licitações em andamento e encerradas no exercício,
+            contendo número e modalidade licitatória, objeto,
+            data da sessão de abertura, valor estimado,
+            valor homologado e situação do certame.
+        </p>
+
+        <p class="nota-vigencia">
+
+            Na ausência de procedimentos licitatórios
+            em determinado exercício,
+            consta declaração negativa específica
+            para o ano correspondente.
+
+        </p>
+
+        <div class="tabela-box">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Ano</th>
+                        <th>Ordem</th>
+                        <th>Nº / Modalidade</th>
+                        <th>Objeto</th>
+                        <th>Data da Sessão</th>
+                        <th>Valor Estimado</th>
+                        <th>Valor Homologado</th>
+                        <th>Situação</th>
+                        <th>Fonte / Detalhes</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tabelaLicitacoes"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</main>
+
+<footer class="rodape">
+
+    <p>
+        © CIMOP – Consórcio Intermunicipal Multifinalitário
+        dos Municípios do Oeste Potiguar
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
