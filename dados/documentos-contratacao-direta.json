@@ -1,0 +1,41 @@
+[
+  {
+    "ano": 2026,
+    "processo": "Dispensa/Inexigibilidade nº 001/2026",
+    "modalidade": "Contratação direta",
+    "objeto": "Modelo para disponibilização dos documentos principais do processo de dispensa ou inexigibilidade.",
+    "fornecedor": "Fornecedor a informar",
+    "valor": "R$ 0,00",
+    "termoReferencia": "",
+    "justificativa": "",
+    "parecer": "",
+    "homologacao": "",
+    "situacao": "Modelo de preenchimento"
+  },
+  {
+    "ano": 2025,
+    "processo": "Declaração negativa",
+    "modalidade": "Não se aplica",
+    "objeto": "Não há processos de dispensa ou inexigibilidade informados neste arquivo-modelo.",
+    "fornecedor": "",
+    "valor": "",
+    "termoReferencia": "",
+    "justificativa": "",
+    "parecer": "",
+    "homologacao": "",
+    "situacao": "Sem registros informados"
+  },
+  {
+    "ano": 2024,
+    "processo": "Declaração negativa",
+    "modalidade": "Não se aplica",
+    "objeto": "Não há processos de dispensa ou inexigibilidade informados neste arquivo-modelo.",
+    "fornecedor": "",
+    "valor": "",
+    "termoReferencia": "",
+    "justificativa": "",
+    "parecer": "",
+    "homologacao": "",
+    "situacao": "Sem registros informados"
+  }
+]

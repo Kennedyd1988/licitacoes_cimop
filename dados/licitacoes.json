@@ -1,0 +1,38 @@
+[
+  {
+    "ano": 2026,
+    "ordem": 1,
+    "numero": "001/2026",
+    "modalidade": "Pregão Eletrônico",
+    "objeto": "Registro de preços para futura e eventual contratação de serviços/fornecimentos de interesse do consórcio.",
+    "dataSessao": "10/01/2026",
+    "valorEstimado": "R$ 0,00",
+    "valorHomologado": "R$ 0,00",
+    "situacao": "Modelo de preenchimento",
+    "fonte": ""
+  },
+  {
+    "ano": 2025,
+    "ordem": 1,
+    "numero": "Declaração negativa",
+    "modalidade": "Não se aplica",
+    "objeto": "Não há registros informados neste arquivo-modelo. Substituir pelos dados extraídos da API do TCE/RN ou do sistema oficial.",
+    "dataSessao": "",
+    "valorEstimado": "",
+    "valorHomologado": "",
+    "situacao": "Sem registros informados",
+    "fonte": ""
+  },
+  {
+    "ano": 2024,
+    "ordem": 1,
+    "numero": "Declaração negativa",
+    "modalidade": "Não se aplica",
+    "objeto": "Não há registros informados neste arquivo-modelo. Substituir pelos dados extraídos da API do TCE/RN ou do sistema oficial.",
+    "dataSessao": "",
+    "valorEstimado": "",
+    "valorHomologado": "",
+    "situacao": "Sem registros informados",
+    "fonte": ""
+  }
+]

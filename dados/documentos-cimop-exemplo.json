@@ -1,0 +1,15 @@
+[
+  {
+    "ano": 2026,
+    "processo": "",
+    "modalidade": "Dispensa/Inexigibilidade",
+    "objeto": "Aguardando retorno da API de Dados Abertos do TCE/RN para o CIMOP.",
+    "fornecedor": "",
+    "valor": "",
+    "termoReferencia": "",
+    "justificativa": "",
+    "parecer": "",
+    "homologacao": "https://apidadosabertos.tce.rn.gov.br//swagger/ui/index",
+    "situacao": "API não configurada/sem retorno"
+  }
+]
